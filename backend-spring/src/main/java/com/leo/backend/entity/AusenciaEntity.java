@@ -1,4 +1,4 @@
-package com.leo.backend.repository;
+package com.leo.backend.entity;
 
 import jakarta.persistence.*;
 
