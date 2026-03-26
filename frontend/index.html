@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Guardias | IES Alixar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <section id="loginView" class="login-shell">
+      <form id="loginForm" class="login-card">
+        <h2>Acceso al parte de guardias</h2>
+        <p class="login-hint">Introduce tus credenciales para continuar.</p>
+
+        <label for="loginUsuario">Usuario</label>
+        <input id="loginUsuario" name="usuario" type="text" autocomplete="username" required />
+
+        <label for="loginPassword">Contrasena</label>
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required />
+
+        <button type="submit" class="login-btn">Entrar</button>
+        <p id="loginMensaje" class="login-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <div id="appShell" class="app-shell hidden">
+      <header class="main-header">
+        <div class="brand-block">
+          <img src="./img/logoalxia.png" alt="IES Alixar Logo" class="logo-badge" />
+          <div class="brand-copy">
+            <h1>PARTE DE GUARDIAS</h1>
+            <p id="usuarioConectado">Usuario conectado: --</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <button
+            id="menuTrigger"
+            class="menu-trigger"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menuDropdown"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon-bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+          <div id="menuDropdown" class="menu-dropdown hidden">
+            <button id="logoutBtn" class="menu-item menu-item-logout" type="button">Logout</button>
+          </div>
+          <span id="fechaEtiqueta" class="date-pill">--</span>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <p id="cabeceraParte" class="toolbar-title">Parte de: --. Ver parte de:</p>
+        <div class="toolbar-actions">
+          <button id="btnManana" class="ghost-btn">Manana</button>
+          <button id="btnOtroDia" class="ghost-btn">Otro dia</button>
+          <button id="btnComunicarAusencia" class="danger-btn" type="button">Comunicar ausencia</button>
+        </div>
+      </section>
+
+      <section class="board">
+        <div class="board-header">
+          <div>HORA / Profesores de guardia</div>
+          <div>AUSENCIAS / TAREAS</div>
+        </div>
+        <div id="rows" class="board-rows"></div>
+      </section>
+      
+      <footer class="metrics-footer">
+        <div class="metrics-badge">
+          ⏱️ <span id="metricas-tiempo">Cargando...</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
